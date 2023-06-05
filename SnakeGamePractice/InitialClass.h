@@ -1,5 +1,7 @@
 #pragma once
 
+const int XLine = 40;
+const int YLine = 20;
 class int2
 {
 public:
@@ -20,6 +22,12 @@ public:
 		y += _other.y;
 	}
 
+	void operator-(int2 _other)
+	{
+		x -= _other.x;
+		y -= _other.y;
+	}
+
 	bool operator==(int2 _other)
 	{
 		if (x == _other.x && y == _other.y)
@@ -35,4 +43,3 @@ private:
 	int x;
 	int y;
 };
-

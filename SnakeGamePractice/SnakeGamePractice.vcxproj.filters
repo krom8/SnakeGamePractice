@@ -21,10 +21,10 @@
     <ClCompile Include="Console.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object.cpp">
+    <ClCompile Include="piece.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="InitialClass.cpp">
+    <ClCompile Include="player.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +32,13 @@
     <ClInclude Include="Console.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
+    <ClInclude Include="InitialClass.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="InitialClass.h">
+    <ClInclude Include="piece.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

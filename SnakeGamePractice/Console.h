@@ -1,28 +1,22 @@
 #pragma once
+#include "InitialClass.h"
 
-const int XLine = 40;
-const int YLine = 20;
+
+class piece;
+class player;
 class ConsoleScreen
 {
 public:
     ConsoleScreen(char _BaseCh);
-    void set() const;
-
-    void turnoff()
-    {
-        OnOff = false;
-    }
-
-
-
-
-
-
+    void clear();
+    void set_piece(piece&);
+    void set_player(player&);
+    void set();
 
     
 private:
     char BaseCh = '*';
     char ArrScreen[YLine][XLine + 1] = {};
-    bool OnOff = true;
+
 };
 
