@@ -4,6 +4,7 @@
 #include "piece.h"
 #include "player.h"
 #include <array>
+#include <list>
 #include "wall.h"
 #include <conio.h>
 
@@ -74,14 +75,21 @@ void ConsoleScreen::set_piece(piece& _piece, wall& _wall)
         
     }
     PutCh(_piece_array[current], 'o');
-    _piece.another_current();
 
 
 }
 
 void ConsoleScreen::set_player(player& _player)
 {
+    std::list<int2> _player_list = _player.get_player_list();
+    std::list<int2>::iterator StartIter = _player_list.begin();
+    std::list<int2>::iterator EndIter = _player_list.end();
 
+
+    for (; StartIter.operator!=(EndIter); ++StartIter)
+    {
+        PutCh(*StartIter, 'A');
+    }
 }
 
 
@@ -94,11 +102,6 @@ void ConsoleScreen::set()
 
     while (_player.Checklive())
     {
-        clear();
-        if (0 != _kbhit())
-        {
-            _player.get_input(*_piece, *_wall);
-        }
         set_wall(*_wall);
         set_piece(*_piece, *_wall);
         set_player(*_player);
@@ -107,7 +110,19 @@ void ConsoleScreen::set()
             printf_s(ArrScreen[y]);
             printf_s("\n");
         }
-        Sleep(300000);
+        Sleep(300);
         system("cls");
+
+        clear();
+        if (0 != _kbhit())
+        {
+            _player.get_input(*_piece, *_wall);
+        }
+        _player.move(*_piece, *_wall);
+
     }
+    printf_s("Game Ends.\n");
+    printf_s("For exit, press any key.\n");
+
+    char Select = (char)_getch();
 }

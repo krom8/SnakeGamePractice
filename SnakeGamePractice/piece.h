@@ -8,7 +8,7 @@ public:
 	piece()
 	{
 	}
-	piece(int _x, int _y)
+	piece(int _y, int _x)
 	{
 		x = _x;
 		y = _y;
@@ -37,8 +37,8 @@ public:
 
 
 private:
-	std::array<int2, 10> piece_array = { int2({20, 16}), int2({17, 4}), int2({2, 1}), int2({5, 15}), int2({13, 14}),
-		int2({31, 15}), int2({22, 10}), int2({33, 2}), int2({2, 17}), int2({7, 8}) };
+	std::array<int2, 10> piece_array = { int2({16, 20}), int2({4, 17}), int2({1, 2}), int2({15, 5}), int2({14, 13}),
+		int2({15, 31}), int2({10, 22}), int2({2, 33}), int2({17, 2}), int2({8, 7}) };
 	int current = 0;
 
 };
